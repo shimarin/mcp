@@ -31,15 +31,18 @@ import key_registry
 from mcp_stdio import McpServer, keyring_get, keyring_missing_error
 
 API_BASE = "https://api.x.ai/v1"
-DEFAULT_MODEL = "grok-4.3"
+DEFAULT_MODEL = "grok-4.7"
 KEY_NAME = key_registry.XAI_API_KEY
 HTTP_TIMEOUT = 120  # seconds; search-heavy responses can be slow
 
 MODELS = [
-    "grok-4.3",                        # default: latest flagship, fastest
-    "grok-4.20-0309-reasoning",        # deep analysis
-    "grok-4.20-0309-non-reasoning",    # low latency, no reasoning
-    "grok-4.20-multi-agent-0309",      # multi-agent oriented
+    "grok-4.7",                        # default: latest, $2.00/$6.00 per 1M tokens, 500k context
+    "grok-4.6",                        # $2.00/$6.00 per 1M tokens, 500k context
+    "grok-4.5",                        # $2.00/$6.00 per 1M tokens, 500k context
+    "grok-4.3",                        # cheaper for bulk work, $1.25/$2.50 per 1M tokens, 1M context
+    "grok-4.20-0309-reasoning",        # $1.25/$2.50 per 1M tokens, 1M context
+    "grok-4.20-0309-non-reasoning",    # low latency, no reasoning, $1.25/$2.50, 1M context
+    "grok-4.20-multi-agent-0309",      # multi-agent oriented, $1.25/$2.50, 1M context
 ]
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
